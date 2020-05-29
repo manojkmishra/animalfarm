@@ -4,11 +4,17 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
+  state: {stateAnimal:null, 
   },
-  mutations: {
+  mutations: {['STORE_ANIMALS'] (state, payload) 
+  {  state.stateAnimal = payload;  
+  console.log('state=',state)
+ },
   },
-  actions: {
+  actions: {storeAnimals: ({commit}, data) => 
+  { console.log('storeanim-data-',data);
+    commit(  'STORE_ANIMALS', data   );  
+  },
   },
   modules: {
   }
