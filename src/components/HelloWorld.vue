@@ -7,15 +7,18 @@
   <button class = "custom-button dark-button"
   type="submit">Get animal</button>
   </form>
+  {{stateAnimal}}
     </div>
 </template>
 
 <script>
 //import axios from 'axios';
+ import {mapState} from 'vuex';
  export default 
  {
     name: 'App',
     data: function() {  return { info: '', animal: ''  }  },
+    computed:{  ...mapState({ stateAnimal:state => state.stateAnimal }), },  
     methods:  {
         getAnimal: function()  {
             // axios
